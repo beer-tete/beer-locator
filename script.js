@@ -298,6 +298,7 @@ nearMeBtn.addEventListener('click', () => {
                 a.distance -
                 b.distance
             );
+            console.log(sorted);
             visibleCount = 10;
             render(sorted);
 
