@@ -224,3 +224,17 @@ footer{
 #loadMoreBtn:hover{
     opacity:.9;
 }
+#nearMeBtn{
+    margin-top:20px;
+    border:none;
+    background:#1a1a1a;
+    color:white;
+    padding:14px 24px;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#nearMeBtn:hover{
+    opacity:.9;
+}

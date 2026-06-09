@@ -10,6 +10,8 @@ const provinceButtons =
 document.getElementById('provinceButtons');
 const stats =
 document.getElementById('stats');
+const nearMeBtn =
+document.getElementById('nearMeBtn');
 const loadMoreBtn =
 document.getElementById('loadMoreBtn');
 
@@ -42,8 +44,13 @@ function render(data){
         <h3>${row["Tên quán"]}</h3>
 
         <div class="province">
-            📍 ${row["Thành phố"] || ""}
-        </div>
+    📍 ${row["Thành phố"] || ""}
+    ${
+        row.distance
+        ? ` • ${row.distance.toFixed(1)} km`
+        : ""
+    }
+</div>
 
         <p>
             ${row["Địa chỉ cụ thể"] || ""}
@@ -219,4 +226,95 @@ loadMoreBtn.addEventListener('click', () => {
     });
 
 }
+function getDistance(lat1, lon1, lat2, lon2){
+
+    const R = 6371;
+
+    const dLat =
+    (lat2 - lat1) * Math.PI / 180;
+
+    const dLon =
+    (lon2 - lon1) * Math.PI / 180;
+
+    const a =
+    Math.sin(dLat/2) *
+    Math.sin(dLat/2) +
+
+    Math.cos(lat1 * Math.PI/180) *
+    Math.cos(lat2 * Math.PI/180) *
+
+    Math.sin(dLon/2) *
+    Math.sin(dLon/2);
+
+    const c =
+    2 * Math.atan2(
+        Math.sqrt(a),
+        Math.sqrt(1-a)
+    );
+
+    return R * c;
+}
+nearMeBtn.addEventListener('click', () => {
+
+    navigator.geolocation.getCurrentPosition(
+
+        position => {
+
+            const userLat =
+            position.coords.latitude;
+
+            const userLng =
+            position.coords.longitude;
+
+            const sorted =
+            [...allData]
+            .filter(
+                row =>
+                row["Latitude"] &&
+                row["Longitude"]
+            )
+            .map(row => {
+
+                const distance =
+                getDistance(
+                    userLat,
+                    userLng,
+                    parseFloat(
+                        row["Latitude"]
+                    ),
+                    parseFloat(
+                        row["Longitude"]
+                    )
+                );
+
+                return {
+                    ...row,
+                    distance
+                };
+
+            })
+            .sort(
+                (a,b) =>
+                a.distance -
+                b.distance
+            );
+
+            render(sorted);
+
+            stats.textContent =
+            `📍 Places near you`;
+
+        },
+
+        () => {
+
+            alert(
+                "Vui lòng cho phép truy cập vị trí."
+            );
+
+        }
+
+    );
+
+});
 
