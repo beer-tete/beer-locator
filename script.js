@@ -298,12 +298,12 @@ nearMeBtn.addEventListener('click', () => {
                 a.distance -
                 b.distance
             );
-
+            visibleCount = 10;
             render(sorted);
 
             stats.textContent =
             `📍 Places near you`;
-
+            loadMoreBtn.style.display = 'none';
         },
 
         () => {
