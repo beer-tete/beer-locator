@@ -1,0 +1,226 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f5f2ed;
+    color:#222;
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.logo{
+    width:100%;
+    max-width:900px;
+    height:350px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+}
+
+h1{
+    font-size:48px;
+    margin-top:20px;
+    margin-bottom:15px;
+    font-weight:800;
+}
+
+.hero p{
+    font-size:24px;
+    color:#444;
+    max-width:900px;
+    margin:auto;
+    line-height:1.5;
+}
+
+#stats{
+    margin-top:30px;
+    margin-bottom:25px;
+    font-size:28px;
+    font-weight:700;
+}
+#search{
+    width:600px;
+    max-width:90%;
+    padding:18px 24px;
+    border:none;
+    border-radius:20px;
+    font-size:18px;
+    margin-top:25px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+#provinceFilter{
+    margin-top:25px;
+    width:320px;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    font-size:18px;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+#provinceButtons{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.province-btn{
+    border:none;
+    background:white;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.province-btn:hover{
+    transform:translateY(-2px);
+}
+
+.province-btn.active{
+    background:black;
+    color:white;
+}
+#list{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
+
+    height:650px;
+    overflow-y:auto;
+}
+.card{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    margin-bottom:20px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-top:0;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.province{
+    color:#777;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    margin-bottom:20px;
+}
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#111;
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    min-width:120px;
+
+    transition:.2s;
+}
+
+.btn:hover{
+    background:#222;
+}
+
+.card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.card-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.venue-logo{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:14px;
+}
+
+.venue-info h3{
+    margin:0 0 8px 0;
+    font-size:28px;
+}
+
+.venue-info p{
+    margin:8px 0 0 0;
+}
+@media(max-width:768px){
+
+    .card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .card-left{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    h1{
+        font-size:36px;
+    }
+
+}
+.hero{
+    max-width:1200px;
+    margin:auto;
+}
+.card{
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#666;
+}
+.load-more-wrap{
+    text-align:center;
+    margin:30px 0 60px;
+}
+
+#loadMoreBtn{
+    border:none;
+    background:black;
+    color:white;
+    padding:15px 30px;
+    border-radius:999px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#loadMoreBtn:hover{
+    opacity:.9;
+}
