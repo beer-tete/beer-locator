@@ -32,7 +32,7 @@ function render(data){
 <div class="card-left">
 
     <img
-        src="images/logo.jpg"
+        src="logo.jpg"
         class="venue-logo"
         alt="Tê Tê Beer"
     >
