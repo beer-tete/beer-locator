@@ -34,7 +34,7 @@ function render(data){
 <div class="card-left">
 
   <img
-    src="images/${row["Logo"]}.png"
+    src="${row["Logo"]}.png"
     class="venue-logo"
     alt="${row["Tên quán"]}"
 >
