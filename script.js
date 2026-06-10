@@ -33,11 +33,11 @@ function render(data){
     card.innerHTML = `
 <div class="card-left">
 
-    <img
-        src="logo.jpg"
-        class="venue-logo"
-        alt="Tê Tê Beer"
-    >
+  <img
+    src="images/${row["Logo"]}.png"
+    class="venue-logo"
+    alt="${row["Tên quán"]}"
+>
 
     <div class="venue-info">
 
@@ -65,7 +65,7 @@ function render(data){
     href="${row["Link gg map"] || "#"}"
     target="_blank"
 >
-    Chỉ đường ↗
+    Get Directions ↗
 </a>
 `;
 
@@ -160,7 +160,9 @@ function filterData(){
     provinceFilter.value;
 
     const filtered =
-    allData.filter(row => {
+allData
+.filter(row => row["Tên quán"])
+.filter(row => {
 
         const name =
         (row["Tên quán"] || "")
@@ -316,6 +318,26 @@ nearMeBtn.addEventListener('click', () => {
         }
 
     );
+
+});
+const aboutBeerBtn =
+document.getElementById('aboutBeerBtn');
+
+const beerModal =
+document.getElementById('beerModal');
+
+const closeModal =
+document.getElementById('closeModal');
+
+aboutBeerBtn.addEventListener('click', () => {
+
+    beerModal.style.display = 'flex';
+
+});
+
+closeModal.addEventListener('click', () => {
+
+    beerModal.style.display = 'none';
 
 });
 

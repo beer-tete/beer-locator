@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
     <title>Tê Tê Beer - Tìm điểm bán</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,16 +16,17 @@
 <header class="hero">
 
     <img
-    src="logo.jpg"
+    src="images/logo.jpg"
     alt="Tê Tê Beer"
     class="logo"
 >
 
-    <h1>FIND PLACES SELLING TÊ TÊ BEER</h1>
+    <h1> TÊ TÊ BEER DRINKING SPOT</h1>
 
     <p>
-        Discover the bars, restaurants, and eateries
-        serving Tê Tê Craft Beer nationwide.
+        WELCOME TO THE HANGOUT!
+        We are having 80+ spots across Vietnam. 
+        FIND YOUR NEAREST BELOW!!
     </p>
 <div id="stats"></div>
     <input
@@ -47,7 +48,9 @@
 <button id="nearMeBtn">
     📍 Places near you
 </button>
-
+<button id="aboutBeerBtn">
+    🍺 Tê Tê Beer Story
+</button>
 </header>
 <section id="list"></section>
 
@@ -61,7 +64,17 @@
 <footer>
     © 2026 Tê Tê Beer. All rights reserved.
 </footer>
+<div id="beerModal" class="modal">
 
+    <span id="closeModal">&times;</span>
+
+    <img
+        src="images/background.jpg"
+        class="modal-image"
+        alt="Tê Tê Beer Story"
+    >
+
+</div>
 <script src="script.js"></script>
 </body>
 </html>
