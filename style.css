@@ -302,7 +302,7 @@ footer{
 }
 @font-face{
     font-family:'TeteFont';
-    src:url('fonts/TeteFontPrivate-Regular.ttf') format('truetype');
+    src:url('TeteFontPrivate-Regular.ttf') format('truetype');
     font-weight:normal;
     font-style:normal;
 }
